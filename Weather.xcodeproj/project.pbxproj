@@ -10,7 +10,6 @@
 		F103540B2328CFAB00F5FEFC /* HourWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103540A2328CFAB00F5FEFC /* HourWeather.swift */; };
 		F103540D2328CFD600F5FEFC /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103540C2328CFD600F5FEFC /* CurrentWeather.swift */; };
 		F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103540E2328CFFB00F5FEFC /* DayWeather.swift */; };
-		F10354112328D02E00F5FEFC /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10354102328D02E00F5FEFC /* Repo.swift */; };
 		F105932F232941B000D75F9F /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105932E232941B000D75F9F /* Entities.swift */; };
 		F105933223294AEE00D75F9F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F105933123294AEE00D75F9F /* Alamofire.framework */; };
 		F105933423294AFA00D75F9F /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F105933323294AFA00D75F9F /* Cartography.framework */; };
@@ -41,7 +40,6 @@
 		F103540A2328CFAB00F5FEFC /* HourWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourWeather.swift; sourceTree = "<group>"; };
 		F103540C2328CFD600F5FEFC /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		F103540E2328CFFB00F5FEFC /* DayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeather.swift; sourceTree = "<group>"; };
-		F10354102328D02E00F5FEFC /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		F105932E232941B000D75F9F /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		F105933123294AEE00D75F9F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		F105933323294AFA00D75F9F /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				F103540C2328CFD600F5FEFC /* CurrentWeather.swift */,
 				F103540E2328CFFB00F5FEFC /* DayWeather.swift */,
 				F103540A2328CFAB00F5FEFC /* HourWeather.swift */,
-				F10354102328D02E00F5FEFC /* Repo.swift */,
 				F105933A23294C3500D75F9F /* GetLocation.swift */,
 				F105932E232941B000D75F9F /* Entities.swift */,
 				F17829A82328C62500C06A55 /* Assets.xcassets */,
@@ -208,7 +205,6 @@
 				F17829A42328C62300C06A55 /* WeatherController.swift in Sources */,
 				F17829A22328C62300C06A55 /* AppDelegate.swift in Sources */,
 				F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */,
-				F10354112328D02E00F5FEFC /* Repo.swift in Sources */,
 				F105932F232941B000D75F9F /* Entities.swift in Sources */,
 				F105933B23294C3500D75F9F /* GetLocation.swift in Sources */,
 				F103540D2328CFD600F5FEFC /* CurrentWeather.swift in Sources */,

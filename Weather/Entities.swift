@@ -1,5 +1,10 @@
 import Foundation
 
+struct Coord:Codable{
+    let lat:Double
+    let lon:Double
+}
+
 struct Weather:Codable{
     let description:String
     let icon:String
