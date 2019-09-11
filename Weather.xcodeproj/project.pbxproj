@@ -7,20 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F103540B2328CFAB00F5FEFC /* HourWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103540A2328CFAB00F5FEFC /* HourWeather.swift */; };
+		F103540D2328CFD600F5FEFC /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103540C2328CFD600F5FEFC /* CurrentWeather.swift */; };
+		F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103540E2328CFFB00F5FEFC /* DayWeather.swift */; };
+		F10354112328D02E00F5FEFC /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10354102328D02E00F5FEFC /* Repo.swift */; };
+		F105932F232941B000D75F9F /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105932E232941B000D75F9F /* Entities.swift */; };
+		F105933223294AEE00D75F9F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F105933123294AEE00D75F9F /* Alamofire.framework */; };
+		F105933423294AFA00D75F9F /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F105933323294AFA00D75F9F /* Cartography.framework */; };
+		F105933823294B8000D75F9F /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F105933323294AFA00D75F9F /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F105933923294B8300D75F9F /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F105933123294AEE00D75F9F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F105933B23294C3500D75F9F /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105933A23294C3500D75F9F /* GetLocation.swift */; };
 		F17829A22328C62300C06A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17829A12328C62300C06A55 /* AppDelegate.swift */; };
-		F17829A42328C62300C06A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17829A32328C62300C06A55 /* ViewController.swift */; };
-		F17829A72328C62300C06A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17829A52328C62300C06A55 /* Main.storyboard */; };
+		F17829A42328C62300C06A55 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17829A32328C62300C06A55 /* WeatherController.swift */; };
 		F17829A92328C62500C06A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17829A82328C62500C06A55 /* Assets.xcassets */; };
-		F17829AC2328C62500C06A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17829AA2328C62500C06A55 /* LaunchScreen.storyboard */; };
+		F17829AC2328C62500C06A55 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17829AA2328C62500C06A55 /* Launch.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F105933723294B7600D75F9F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F105933923294B8300D75F9F /* Alamofire.framework in CopyFiles */,
+				F105933823294B8000D75F9F /* Cartography.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F103540A2328CFAB00F5FEFC /* HourWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourWeather.swift; sourceTree = "<group>"; };
+		F103540C2328CFD600F5FEFC /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		F103540E2328CFFB00F5FEFC /* DayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeather.swift; sourceTree = "<group>"; };
+		F10354102328D02E00F5FEFC /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		F105932E232941B000D75F9F /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		F105933123294AEE00D75F9F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		F105933323294AFA00D75F9F /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
+		F105933A23294C3500D75F9F /* GetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
 		F178299E2328C62300C06A55 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17829A12328C62300C06A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F17829A32328C62300C06A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F17829A62328C62300C06A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F17829A32328C62300C06A55 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		F17829A82328C62500C06A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F17829AB2328C62500C06A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F17829AB2328C62500C06A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		F17829AD2328C62500C06A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -29,17 +59,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F105933423294AFA00D75F9F /* Cartography.framework in Frameworks */,
+				F105933223294AEE00D75F9F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F105933023294AEE00D75F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F105933323294AFA00D75F9F /* Cartography.framework */,
+				F105933123294AEE00D75F9F /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F17829952328C62300C06A55 = {
 			isa = PBXGroup;
 			children = (
 				F17829A02328C62300C06A55 /* Weather */,
 				F178299F2328C62300C06A55 /* Products */,
+				F105933023294AEE00D75F9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,10 +97,15 @@
 			isa = PBXGroup;
 			children = (
 				F17829A12328C62300C06A55 /* AppDelegate.swift */,
-				F17829A32328C62300C06A55 /* ViewController.swift */,
-				F17829A52328C62300C06A55 /* Main.storyboard */,
+				F17829A32328C62300C06A55 /* WeatherController.swift */,
+				F103540C2328CFD600F5FEFC /* CurrentWeather.swift */,
+				F103540E2328CFFB00F5FEFC /* DayWeather.swift */,
+				F103540A2328CFAB00F5FEFC /* HourWeather.swift */,
+				F10354102328D02E00F5FEFC /* Repo.swift */,
+				F105933A23294C3500D75F9F /* GetLocation.swift */,
+				F105932E232941B000D75F9F /* Entities.swift */,
 				F17829A82328C62500C06A55 /* Assets.xcassets */,
-				F17829AA2328C62500C06A55 /* LaunchScreen.storyboard */,
+				F17829AA2328C62500C06A55 /* Launch.storyboard */,
 				F17829AD2328C62500C06A55 /* Info.plist */,
 			);
 			path = Weather;
@@ -74,6 +121,8 @@
 				F178299A2328C62300C06A55 /* Sources */,
 				F178299B2328C62300C06A55 /* Frameworks */,
 				F178299C2328C62300C06A55 /* Resources */,
+				F105933523294AFF00D75F9F /* ShellScript */,
+				F105933723294B7600D75F9F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -122,41 +171,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17829AC2328C62500C06A55 /* LaunchScreen.storyboard in Resources */,
+				F17829AC2328C62500C06A55 /* Launch.storyboard in Resources */,
 				F17829A92328C62500C06A55 /* Assets.xcassets in Resources */,
-				F17829A72328C62300C06A55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F105933523294AFF00D75F9F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F178299A2328C62300C06A55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17829A42328C62300C06A55 /* ViewController.swift in Sources */,
+				F17829A42328C62300C06A55 /* WeatherController.swift in Sources */,
 				F17829A22328C62300C06A55 /* AppDelegate.swift in Sources */,
+				F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */,
+				F10354112328D02E00F5FEFC /* Repo.swift in Sources */,
+				F105932F232941B000D75F9F /* Entities.swift in Sources */,
+				F105933B23294C3500D75F9F /* GetLocation.swift in Sources */,
+				F103540D2328CFD600F5FEFC /* CurrentWeather.swift in Sources */,
+				F103540B2328CFAB00F5FEFC /* HourWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F17829A52328C62300C06A55 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F17829A62328C62300C06A55 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F17829AA2328C62500C06A55 /* LaunchScreen.storyboard */ = {
+		F17829AA2328C62500C06A55 /* Launch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F17829AB2328C62500C06A55 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Launch.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,7 +351,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haanhgs.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,7 +373,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.haanhgs.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

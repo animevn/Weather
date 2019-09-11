@@ -1,0 +1,10 @@
+{
+  "commitish" : "4.0.0",
+  "iOS" : [
+    {
+      "name" : "Cartography",
+      "hash" : "2ec17319d5dab643f179ead7c5db2d24ff46c27105067aabe6a797943e0e3d5c",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}
