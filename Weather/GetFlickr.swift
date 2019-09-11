@@ -9,6 +9,7 @@ class GetFlickr{
     private let GROUP = "1463451@N25"
     
     func getData(coord:Coord, completion:@escaping (Data)->Void){
+        
         let parameters:Parameters = [
             "method":METHOD,
             "group_id":GROUP,
@@ -19,6 +20,7 @@ class GetFlickr{
             "format":"json",
             "nojsoncallback":"1"
         ]
+        
         Alamofire.request(URL, method: .get, parameters: parameters).responseData{
             guard let data = $0.data else {return}
             completion(data)
