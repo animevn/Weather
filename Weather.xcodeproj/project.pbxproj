@@ -16,6 +16,7 @@
 		F105933823294B8000D75F9F /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F105933323294AFA00D75F9F /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F105933923294B8300D75F9F /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F105933123294AEE00D75F9F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F105933B23294C3500D75F9F /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105933A23294C3500D75F9F /* GetLocation.swift */; };
+		F105933D232953BB00D75F9F /* GetFlickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F105933C232953BB00D75F9F /* GetFlickr.swift */; };
 		F17829A22328C62300C06A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17829A12328C62300C06A55 /* AppDelegate.swift */; };
 		F17829A42328C62300C06A55 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17829A32328C62300C06A55 /* WeatherController.swift */; };
 		F17829A92328C62500C06A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17829A82328C62500C06A55 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		F105933123294AEE00D75F9F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		F105933323294AFA00D75F9F /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		F105933A23294C3500D75F9F /* GetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
+		F105933C232953BB00D75F9F /* GetFlickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFlickr.swift; sourceTree = "<group>"; };
 		F178299E2328C62300C06A55 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17829A12328C62300C06A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17829A32328C62300C06A55 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				F103540C2328CFD600F5FEFC /* CurrentWeather.swift */,
 				F103540E2328CFFB00F5FEFC /* DayWeather.swift */,
 				F103540A2328CFAB00F5FEFC /* HourWeather.swift */,
+				F105933C232953BB00D75F9F /* GetFlickr.swift */,
 				F105933A23294C3500D75F9F /* GetLocation.swift */,
 				F105932E232941B000D75F9F /* Entities.swift */,
 				F17829A82328C62500C06A55 /* Assets.xcassets */,
@@ -207,6 +210,7 @@
 				F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */,
 				F105932F232941B000D75F9F /* Entities.swift in Sources */,
 				F105933B23294C3500D75F9F /* GetLocation.swift in Sources */,
+				F105933D232953BB00D75F9F /* GetFlickr.swift in Sources */,
 				F103540D2328CFD600F5FEFC /* CurrentWeather.swift in Sources */,
 				F103540B2328CFAB00F5FEFC /* HourWeather.swift in Sources */,
 			);

@@ -3,7 +3,7 @@ import UIKit
 class WeatherController: UIViewController {
     
     private var background = UIImageView()
-
+    private var location:GetLocation?
     
     
     private func setupBackground(image:String){
@@ -19,6 +19,15 @@ class WeatherController: UIViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        location = GetLocation{ coord in
+            let flickr = GetFlickr()
+            flickr.getData(coord: coord, completion: { data in
+                let string = String(data: data, encoding: .utf8)
+                print(string!)
+            })
+        }
+    }
 
 }
 
