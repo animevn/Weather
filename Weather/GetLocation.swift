@@ -13,6 +13,10 @@ class GetLocation:NSObject, CLLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
     }
     
+    deinit {
+        print("The class \(type(of: self)) was remove from memory")
+    }
+    
     func locationManager(
         _ manager: CLLocationManager,
         didChangeAuthorization status: CLAuthorizationStatus) {

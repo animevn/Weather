@@ -20,11 +20,11 @@ class WeatherController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        
         location = GetLocation{ coord in
             let flickr = GetFlickr()
-            flickr.getData(coord: coord, completion: { data in
-                let string = String(data: data, encoding: .utf8)
-                print(string!)
+            flickr.getData(coord: coord, completion: {
+                print($0!)
             })
         }
     }

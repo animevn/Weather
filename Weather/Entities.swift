@@ -102,3 +102,14 @@ extension Double{
         return Int(self.rounded())
     }
 }
+
+func DecodeData<T:Codable>(data:Data)->T?{
+    var object = NSObject() as! T
+    do{
+        object = try JSONDecoder().decode(T.self, from:data)
+        print(object)
+    }catch let error{
+        print(error)
+    }
+    return object
+}
