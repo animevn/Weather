@@ -80,9 +80,7 @@ struct List:Codable{
     
     var dayOfWeek:String{
         get{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE"
-            return dateFormatter.string(from: date)
+            return date.toWeekDay()
         }
     }
     

@@ -59,3 +59,12 @@ extension Double{
         return Int(self.rounded())
     }
 }
+
+extension Date{
+    
+    func toWeekDay()->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE dd - MMM"
+        return dateFormatter.string(from: self)
+    }
+}

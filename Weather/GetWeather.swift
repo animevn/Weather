@@ -6,6 +6,9 @@ class GetWeather{
     private let urlCurrent = "https://api.openweathermap.org/data/2.5/weather?"
     private let urlForecast = "https://api.openweathermap.org/data/2.5/forecast?"
 
+    deinit {
+        print("The class \(type(of: self)) was remove from memory")
+    }
     
     func getCurrent(coord:Coord, completion:@escaping (WeatherCurrent?)->Void){
         let parameters:Parameters = ["appid":API, "lat":coord.lat, "lon":coord.lon]

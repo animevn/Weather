@@ -6,7 +6,7 @@ class CurrentWeather:UIView{
     
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(origin: .zero, size: frame.size))
+        super.init(frame: frame)
         backgroundColor = .orange
         alpha = 0.5
     }
