@@ -28,7 +28,7 @@ class WeatherController: UIViewController {
     
     private func setupScrollView(){
         scrollView.clipsToBounds = true
-        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         scrollView.delegate = self
         scrollView.addSubview(currentWeather)
         scrollView.addSubview(dayWeather)
@@ -41,6 +41,28 @@ class WeatherController: UIViewController {
         setupBackground(image: "default")
         setupBlurrView()
         setupScrollView()
+    }
+    
+    private func createBlurEffect()->UIVisualEffectView{
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }
+    
+    private func setupBlurrEffectToView(image:UIImage?){
+        guard let image = image else {return}
+        background.image = image
+        blurrView.image = image
+        blurrView.addSubview(createBlurEffect())
+        blurrView.alpha = 0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let threshold = screen().y/2
+        blurrView.alpha = min(1 , offset/threshold)
     }
     
     private func setLayout(){
@@ -74,6 +96,7 @@ class WeatherController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        setupBlurrEffectToView(image: UIImage(named: "default"))
         setLayout()
         
         location = GetLocation{ coord in
@@ -88,8 +111,5 @@ class WeatherController: UIViewController {
 
 extension WeatherController:UIScrollViewDelegate{
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        
-    }
+    
 }

@@ -7,7 +7,7 @@ class HourWeather:UIView{
     override init(frame: CGRect) {
         super.init(frame: CGRect(origin: .zero, size: frame.size))
         backgroundColor = .red
-        alpha = 0.5
+        alpha = 0.02
     }
     
     required init?(coder aDecoder: NSCoder) {
