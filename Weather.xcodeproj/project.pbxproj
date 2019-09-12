@@ -21,6 +21,7 @@
 		F17829A42328C62300C06A55 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17829A32328C62300C06A55 /* WeatherController.swift */; };
 		F17829A92328C62500C06A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17829A82328C62500C06A55 /* Assets.xcassets */; };
 		F17829AC2328C62500C06A55 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17829AA2328C62500C06A55 /* Launch.storyboard */; };
+		F1A26A5B232A5A8C0071E163 /* GetWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A5A232A5A8C0071E163 /* GetWeather.swift */; };
 		F1AF9A612329F0DC00EF2E58 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF9A602329F0DC00EF2E58 /* Repo.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		F17829A82328C62500C06A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F17829AB2328C62500C06A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		F17829AD2328C62500C06A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1A26A5A232A5A8C0071E163 /* GetWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeather.swift; sourceTree = "<group>"; };
 		F1AF9A602329F0DC00EF2E58 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				F103540A2328CFAB00F5FEFC /* HourWeather.swift */,
 				F103540E2328CFFB00F5FEFC /* DayWeather.swift */,
 				F105933C232953BB00D75F9F /* GetFlickr.swift */,
+				F1A26A5A232A5A8C0071E163 /* GetWeather.swift */,
 				F105933A23294C3500D75F9F /* GetLocation.swift */,
 				F105932E232941B000D75F9F /* Entities.swift */,
 				F1AF9A602329F0DC00EF2E58 /* Repo.swift */,
@@ -213,6 +216,7 @@
 				F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */,
 				F1AF9A612329F0DC00EF2E58 /* Repo.swift in Sources */,
 				F105932F232941B000D75F9F /* Entities.swift in Sources */,
+				F1A26A5B232A5A8C0071E163 /* GetWeather.swift in Sources */,
 				F105933B23294C3500D75F9F /* GetLocation.swift in Sources */,
 				F105933D232953BB00D75F9F /* GetFlickr.swift in Sources */,
 				F103540D2328CFD600F5FEFC /* CurrentWeather.swift in Sources */,

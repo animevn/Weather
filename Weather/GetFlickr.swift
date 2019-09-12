@@ -1,4 +1,3 @@
-import Foundation
 import Alamofire
 
 class GetFlickr{
@@ -11,16 +10,6 @@ class GetFlickr{
     deinit {
         print("The class \(type(of: self)) was remove from memory")
     }
-    
-//    func decodeData(data:Data)->Flickr?{
-//        do{
-//            let object = try JSONDecoder().decode(Flickr.self, from:data)
-//            return object
-//        }catch let error{
-//            print(error)
-//            return nil
-//        }
-//    }
     
     private func getUrlFromFlickr(flickr:Flickr?)->URL?{
         guard let flickr = flickr else {return nil}

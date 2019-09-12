@@ -7,7 +7,7 @@ class DayWeather:UIView{
     override init(frame: CGRect) {
         super.init(frame: CGRect(origin: .zero, size: frame.size))
         backgroundColor = .green
-        alpha = 0.05
+        alpha = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -2,12 +2,13 @@ import UIKit
 
 class CurrentWeather:UIView{
     
-    let height:CGFloat = screen().y * 3/10 - inset
+    let height:CGFloat = screen().y * 3.5/10 - inset * 2
+    
     
     override init(frame: CGRect) {
         super.init(frame: CGRect(origin: .zero, size: frame.size))
         backgroundColor = .orange
-        alpha = 0.05
+        alpha = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,7 +19,14 @@ class CurrentWeather:UIView{
         print("The class \(type(of: self)) was remove from memory")
     }
     
+    private func setLayout(){
+        
+    }
     
+    override func updateConstraints() {
+        setLayout()
+        super.updateConstraints()
+    }
     
     
     

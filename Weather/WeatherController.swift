@@ -94,15 +94,22 @@ class WeatherController: UIViewController {
             $0.height == dayWeather.height
         }
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
-        setupBlurrEffectToView(image: UIImage(named: "default"))
+        
         setLayout()
+        setupBlurrEffectToView(image: UIImage(named: "default"))
+        
         
         location = GetLocation{ coord in
-            let flickr = GetFlickr()
-            flickr.getData(coord: coord, completion: {
-                print($0!)
+//            let flickr = GetFlickr()
+//            flickr.getData(coord: coord, completion: {
+//                print($0!)
+//            })
+            let getWeather = GetWeather()
+            getWeather.getHourly(coord: coord, completion: {
+                print($0!.listDaily)
             })
         }
     }
