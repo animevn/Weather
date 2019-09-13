@@ -88,32 +88,35 @@ extension String{
     }
 }
 
-private let imageCache = NSCache<NSString, UIImage>()
+let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView{
-    
+
     func loadImageFromUrl(stringUrl:String){
-        
+
         image = nil
-        
+
         if let cachedImage = imageCache.object(forKey: stringUrl as NSString){
             image = cachedImage
+            print("cached already")
             return
         }
-        
+
         guard let url = URL(string: stringUrl) else {return}
-        let session = URLSession.shared
-        let task = session.dataTask(with: url){ (data, response, error) in
-            if let error = error{
-                print(error)
-            }
-            if let data = data, let image = UIImage(data: data){
-                DispatchQueue.main.async {
-                    imageCache.setObject(image, forKey: stringUrl as NSString)
-                    self.image = image
+
+        DispatchQueue.global().async{[weak self] in
+            
+            if let data = try? Data(contentsOf: url){
+                
+                if let image = UIImage(data: data){
+                    
+                    DispatchQueue.main.async {
+                        
+                        imageCache.setObject(image, forKey: stringUrl as NSString)
+                        self?.image = image
+                    }
                 }
             }
         }
-        task.resume()
     }
 }

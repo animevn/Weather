@@ -97,49 +97,56 @@ class WeatherController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    private func getWeatherForecast(coord:Coord){
+        let getWeather = GetWeather()
+        getWeather.getCurrent(coord: coord, completion: { weatherCurrent in
+            guard let weatherCurrent = weatherCurrent else {return}
+            self.currentWeather.updateCurrentWeather(weatherCurrent: weatherCurrent)
+            return
+        })
+        getWeather.getHourly(coord: coord, completion: {weatherHourly in
+            guard let weatherHourly = weatherHourly else {return}
+            
+            self.dayWeather.isUpdateLayout = true
+            self.dayWeather.setNumOfRows(weatherHourly: weatherHourly)
+            self.dayWeather.createDailyForecastViews(weatherHourly: weatherHourly)
+            
+            self.hourWeather.isUpdateLayout = true
+            self.hourWeather.createHourlyView(weatherHourly: weatherHourly)
+            
+            return
+        })
+    }
+    
+    private func getFlickrImage(coord:Coord){
+        
+        let flickr = GetFlickr()
+        
+        flickr.getData(coord: coord, completion: { stringUrl in
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                UIView.transition(
+                    with: self.view,
+                    duration: 1,
+                    options: .transitionCrossDissolve,
+                    animations: {
+                        self.background.loadImageFromUrl(stringUrl: stringUrl)
+                        self.blurrView.loadImageFromUrl(stringUrl: stringUrl)
+                },
+                    completion: nil)
+            })
+        })
+    }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         
         setLayout()
         setupBlurrEffectToView(image: UIImage(named: "default"))
         
-        
         location = GetLocation{ coord in
-            
-            let flickr = GetFlickr()
-            flickr.getData(coord: coord, completion: { stringUrl in
-                UIView.transition(
-                    with: self.view,
-                    duration: 1,
-                    options: .transitionFlipFromRight,
-                    animations: {
-                        self.background.loadImageFromUrl(stringUrl: stringUrl)
-                        self.blurrView.loadImageFromUrl(stringUrl: stringUrl)
-                    },
-                    completion: nil)
-                
-            })
-            
-            let getWeather = GetWeather()
-            
-            getWeather.getCurrent(coord: coord, completion: { weatherCurrent in
-                guard let weatherCurrent = weatherCurrent else {return}
-                self.currentWeather.updateCurrentWeather(weatherCurrent: weatherCurrent)
-                return
-            })
-            
-            getWeather.getHourly(coord: coord, completion: {weatherHourly in
-                guard let weatherHourly = weatherHourly else {return}
-                
-                self.dayWeather.isUpdateLayout = true
-                self.dayWeather.setNumOfRows(weatherHourly: weatherHourly)
-                self.dayWeather.createDailyForecastViews(weatherHourly: weatherHourly)
-                
-                self.hourWeather.isUpdateLayout = true
-                self.hourWeather.createHourlyView(weatherHourly: weatherHourly)
-                
-                return
-            })
+            self.getFlickrImage(coord: coord)
+            self.getWeatherForecast(coord: coord)
         }
     }
 }
