@@ -24,6 +24,7 @@
 		F17829AC2328C62500C06A55 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17829AA2328C62500C06A55 /* Launch.storyboard */; };
 		F1A26A5B232A5A8C0071E163 /* GetWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A5A232A5A8C0071E163 /* GetWeather.swift */; };
 		F1AF9A612329F0DC00EF2E58 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF9A602329F0DC00EF2E58 /* Repo.swift */; };
+		F1C61745232B35E6002355AA /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C61744232B35E6002355AA /* HourCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,7 @@
 		F17829AD2328C62500C06A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A26A5A232A5A8C0071E163 /* GetWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeather.swift; sourceTree = "<group>"; };
 		F1AF9A602329F0DC00EF2E58 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		F1C61744232B35E6002355AA /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F17829A32328C62300C06A55 /* WeatherController.swift */,
 				F103540C2328CFD600F5FEFC /* CurrentWeather.swift */,
 				F103540A2328CFAB00F5FEFC /* HourWeather.swift */,
+				F1C61744232B35E6002355AA /* HourCell.swift */,
 				F103540E2328CFFB00F5FEFC /* DayWeather.swift */,
 				F12746CB232A90FB007094A2 /* DayCell.swift */,
 				F105933C232953BB00D75F9F /* GetFlickr.swift */,
@@ -217,6 +220,7 @@
 				F17829A42328C62300C06A55 /* WeatherController.swift in Sources */,
 				F17829A22328C62300C06A55 /* AppDelegate.swift in Sources */,
 				F103540F2328CFFB00F5FEFC /* DayWeather.swift in Sources */,
+				F1C61745232B35E6002355AA /* HourCell.swift in Sources */,
 				F1AF9A612329F0DC00EF2E58 /* Repo.swift in Sources */,
 				F105932F232941B000D75F9F /* Entities.swift in Sources */,
 				F1A26A5B232A5A8C0071E163 /* GetWeather.swift in Sources */,
