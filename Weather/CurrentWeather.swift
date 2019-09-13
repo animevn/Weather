@@ -123,6 +123,4 @@ class CurrentWeather:UIView{
         lbCity.text = "\(weatherCurrent.name)"
         
     }
-    
-    
 }

@@ -87,7 +87,6 @@ struct List:Codable{
             return date.toHour()
         }
     }
-    
 }
 
 struct City:Codable{
@@ -128,6 +127,7 @@ struct WeatherHourly:Codable{
                     temp_max = max(temp_max, tempList.main.temp_max)
                 }
                 temp = total/Double(value.count)
+                
                 let main = Main(temp: temp, temp_min: temp_min, temp_max: temp_max)
                 listDaily.append(List(dt: dt, dt_txt: dt_txt, main: main, weather: weather))
             }

@@ -11,8 +11,8 @@ class GetFlickr{
         print("The class \(type(of: self)) was remove from memory")
     }
     
-    private func getUrlFromFlickr(flickr:Flickr?)->URL?{
-        guard let flickr = flickr else {return nil}
+    private func getUrlFromFlickr(flickr:Flickr?)->String{
+        guard let flickr = flickr else {return ""}
         let photoList = flickr.photos.photo.filter{
             $0.ispublic == 1
         }
@@ -26,10 +26,10 @@ class GetFlickr{
             let secret = photoList[random].secret
             string = "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
         }
-        return Foundation.URL(string: string)
+        return string
     }
     
-    func getData(coord:Coord, completion:@escaping (URL?)->Void){
+    func getData(coord:Coord, completion:@escaping (String)->Void){
         
         let parameters:Parameters = [
             "method":METHOD,
@@ -44,8 +44,8 @@ class GetFlickr{
         
         Alamofire.request(URL, method: .get, parameters: parameters).responseData{
             guard let data = $0.data else {return}
-            let url = self.getUrlFromFlickr(flickr: decodeData(data: data))
-            completion(url)
+            let string = self.getUrlFromFlickr(flickr: decodeData(data: data))
+            completion(string)
         }
     }
     

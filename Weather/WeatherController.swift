@@ -17,12 +17,14 @@ class WeatherController: UIViewController, UIScrollViewDelegate {
         background.image = UIImage(named: image)
         background.clipsToBounds = true
         background.frame.size = view.frame.size
+        background.contentMode = .scaleAspectFill
         view.addSubview(background)
     }
     
     private func setupBlurrView(){
         blurrView.clipsToBounds = true
         blurrView.frame.size = view.frame.size
+        blurrView.contentMode = .scaleAspectFill
         view.addSubview(blurrView)
     }
     
@@ -103,10 +105,21 @@ class WeatherController: UIViewController, UIScrollViewDelegate {
         
         
         location = GetLocation{ coord in
-//            let flickr = GetFlickr()
-//            flickr.getData(coord: coord, completion: {
-//                print($0!)
-//            })
+            
+            let flickr = GetFlickr()
+            flickr.getData(coord: coord, completion: { stringUrl in
+                UIView.transition(
+                    with: self.view,
+                    duration: 1,
+                    options: .transitionFlipFromRight,
+                    animations: {
+                        self.background.loadImageFromUrl(stringUrl: stringUrl)
+                        self.blurrView.loadImageFromUrl(stringUrl: stringUrl)
+                    },
+                    completion: nil)
+                
+            })
+            
             let getWeather = GetWeather()
             
             getWeather.getCurrent(coord: coord, completion: { weatherCurrent in
