@@ -68,3 +68,9 @@ extension Date{
         return dateFormatter.string(from: self)
     }
 }
+
+extension String{
+    func upperFirstLetter()->String{
+        return (self.first?.uppercased())! + self.dropFirst()
+    }
+}

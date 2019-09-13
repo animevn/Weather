@@ -5,16 +5,16 @@ class DayWeather:UIView{
     
     let height:CGFloat = screen().y * 5/10 - inset
     var isUpdateLayout = false
+    var numOfRows:Int!
     
     private var dayCells = [DayCell]()
     
-    
-    
+    func setNumOfRows(weatherHourly:WeatherHourly){
+        numOfRows = weatherHourly.listDaily.count
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = .green
-//        alpha = 1
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,14 +33,14 @@ class DayWeather:UIView{
         constrain(dayCells.first!){
             $0.top == $0.superview!.top
             $0.left == $0.superview!.left
-            $0.height == height/5
+            $0.height == height/CGFloat(numOfRows)
         }
         
         for i in 0..<(dayCells.count - 1){
             constrain(dayCells[i], dayCells[i + 1]){
                 $1.top == $0.bottom
                 $0.left == $0.superview!.left
-                $0.height == height/5
+                $0.height == height/CGFloat(numOfRows)
             }
         }
         
@@ -61,17 +61,16 @@ class DayWeather:UIView{
         }
     }
     
-    private func createRows(weatherHourly:WeatherHourly){
-        let count = weatherHourly.listDaily.count
-        (1...count).forEach{_ in
-            let cell = DayCell(frame: .zero)
+    private func createRows(){
+        (1...numOfRows).forEach{_ in
+            let cell = DayCell(numOfRows: numOfRows)
             dayCells.append(cell)
             addSubview(cell)
         }
     }
     
     func createDailyForecastViews(weatherHourly:WeatherHourly){
-        createRows(weatherHourly: weatherHourly)
+        createRows()
         zip(dayCells, weatherHourly.listDaily).forEach{
             $0.updateContent(list:$1)
         }

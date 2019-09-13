@@ -108,8 +108,19 @@ class WeatherController: UIViewController {
 //                print($0!)
 //            })
             let getWeather = GetWeather()
-            getWeather.getHourly(coord: coord, completion: {
-                print($0!.listDaily)
+            
+            getWeather.getCurrent(coord: coord, completion: { weatherCurrent in
+                guard let weatherCurrent = weatherCurrent else {return}
+                self.currentWeather.updateCurrentWeather(weatherCurrent: weatherCurrent)
+                return
+            })
+            
+            getWeather.getHourly(coord: coord, completion: {weatherHourly in
+                guard let weatherHourly = weatherHourly else {return}
+                self.dayWeather.isUpdateLayout = true
+                self.dayWeather.setNumOfRows(weatherHourly: weatherHourly)
+                self.dayWeather.createDailyForecastViews(weatherHourly: weatherHourly)
+                return
             })
         }
     }

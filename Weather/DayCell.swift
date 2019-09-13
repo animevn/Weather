@@ -3,7 +3,11 @@ import Cartography
 
 class DayCell:UIView{
     
-    let height:CGFloat = (screen().y * 5/10 - inset)/5
+    var height:CGFloat{
+        get{
+            return (screen().y * 5/10 - inset)/CGFloat(numOfRows)
+        }
+    }
     
     private var lbMinMax = UILabel()
     private var lbWeekDay = UILabel()
@@ -24,16 +28,24 @@ class DayCell:UIView{
         lbWeekDay.textColor = .white
         lbWeekDay.shadowColor = .darkGray
         lbWeekDay.adjustsFontSizeToFitWidth = true
-        lbWeekDay.font = .systemFont(ofSize: height * 0.33)
+        lbWeekDay.font = .systemFont(ofSize: height * 0.4)
         
         lbMinMax.textColor = .white
         lbMinMax.shadowColor = .darkGray
         lbMinMax.adjustsFontSizeToFitWidth = true
-        lbMinMax.font = .systemFont(ofSize: height * 0.33)
+        lbMinMax.font = .systemFont(ofSize: height * 0.4)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        createViews()
+//        setupViews()
+//    }
+    
+    //this is used when wanna add more parameters to uiview initializer
+    required init(numOfRows:Int) {
+        self.numOfRows = numOfRows
+        super.init(frame: .zero)
         createViews()
         setupViews()
     }
@@ -54,20 +66,18 @@ class DayCell:UIView{
         }
         
         constrain(lbWeekDay){
-            $0.height == $0.superview!.height
-            $0.centerY == $0.superview!.centerY
+            $0.height == height
             $0.left == $0.superview!.left + 15
         }
         
         constrain(lbMinMax){
-            $0.height == $0.superview!.height
-            $0.centerY == $0.superview!.centerY
+            $0.height == height
             $0.right == $0.superview!.right - 15
         }
         
         constrain(ivWeatherIcon, lbMinMax){
             $0.right == $1.left - 10
-            $0.height == $0.superview!.height
+            $0.height == height
             $0.width == $0.height
             $0.centerY == $0.superview!.centerY
         }
