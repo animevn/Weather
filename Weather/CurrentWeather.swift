@@ -120,6 +120,7 @@ class CurrentWeather:UIView{
             let min = weatherCurrent.main.minF.toInt()
             lbMinMax.text = "\(min)°F - \(max)°F"
         }
+        lbCity.text = "\(weatherCurrent.name)"
         
     }
     

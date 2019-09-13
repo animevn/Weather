@@ -72,15 +72,19 @@ struct List:Codable{
     
     var day:String{
         get{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MMM"
-            return dateFormatter.string(from: date)
+            return date.toMonthDay()
         }
     }
     
     var dayOfWeek:String{
         get{
             return date.toWeekDay()
+        }
+    }
+    
+    var hour:String{
+        get{
+            return date.toHour()
         }
     }
     

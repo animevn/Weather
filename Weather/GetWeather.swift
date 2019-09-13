@@ -27,8 +27,4 @@ class GetWeather{
             completion(decodeData(data: data))
         }
     }
-    
-    
-    
-    
 }

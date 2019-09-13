@@ -1,7 +1,7 @@
 import UIKit
 import Cartography
 
-class WeatherController: UIViewController {
+class WeatherController: UIViewController, UIScrollViewDelegate {
     
     private var background = UIImageView()
     private var blurrView = UIImageView()
@@ -117,17 +117,16 @@ class WeatherController: UIViewController {
             
             getWeather.getHourly(coord: coord, completion: {weatherHourly in
                 guard let weatherHourly = weatherHourly else {return}
+                
                 self.dayWeather.isUpdateLayout = true
                 self.dayWeather.setNumOfRows(weatherHourly: weatherHourly)
                 self.dayWeather.createDailyForecastViews(weatherHourly: weatherHourly)
+                
+                self.hourWeather.isUpdateLayout = true
+                self.hourWeather.createHourlyView(weatherHourly: weatherHourly)
+                
                 return
             })
         }
     }
-
-}
-
-extension WeatherController:UIScrollViewDelegate{
-    
-    
 }

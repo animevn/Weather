@@ -64,7 +64,19 @@ extension Date{
     
     func toWeekDay()->String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE dd - MMM"
+        dateFormatter.dateFormat = "EEE dd-MMM"
+        return dateFormatter.string(from: self)
+    }
+    
+    func toMonthDay()->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM"
+        return dateFormatter.string(from: self)
+    }
+    
+    func toHour()->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
 }
