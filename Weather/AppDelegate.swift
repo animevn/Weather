@@ -13,9 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let weather = WeatherController()
         window?.rootViewController = weather
-//        window?.backgroundColor = .orange
         window?.makeKeyAndVisible()
-        
         return true
     }
 
