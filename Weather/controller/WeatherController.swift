@@ -11,6 +11,8 @@ class WeatherController: UIViewController, UIScrollViewDelegate{
     private var hourWeather = HourWeather(frame: .zero)
     private var dayWeather = DayWeather(frame: .zero)
     
+    private var location:GetLocation?
+    
     deinit {
         print("The class \(type(of: self)) was remove from memory")
     }
@@ -99,13 +101,27 @@ class WeatherController: UIViewController, UIScrollViewDelegate{
         setupBackground(image: Constants.image)
         setupBlurView()
         setupScrollView()
-        initLayouts()
-        setupBlurEffectToView(image: UIImage(named: Constants.image))
+        
     }
+    
+    private func getWeather(coord:Coord){
+        let weather = GetWeather()
+        weather.getCurrentWeather(coord: coord, completion: {[weak self] weatherCurrent in
+            guard let weatherCurrent = weatherCurrent else {return}
+            self?.currentWeather.updateCurrentWeather(weatherCurrent: weatherCurrent)
+            return
+        })
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("WelcomeView will appear")
+        initLayouts()
+        setupBlurEffectToView(image: UIImage(named: Constants.image))
+        location = GetLocation{[weak self] coord in
+            self?.getWeather(coord: coord)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

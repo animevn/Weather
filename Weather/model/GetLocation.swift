@@ -1,6 +1,6 @@
 import CoreLocation
 
-class GetLocation:NSObject{
+class GetLocation:NSObject, CLLocationManagerDelegate{
     
     private var locationManager = CLLocationManager()
     private var coord:(Coord)->Void
@@ -17,10 +17,7 @@ class GetLocation:NSObject{
     deinit {
         print("The class \(type(of: self)) was remove from memory")
     }
-}
-
-extension GetLocation:CLLocationManagerDelegate{
-        
+    
     func locationManager(
         _ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
@@ -36,6 +33,10 @@ extension GetLocation:CLLocationManagerDelegate{
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         guard let coord = locations.last?.coordinate else {return}
         DispatchQueue.main.async {[weak self] in
@@ -43,8 +44,8 @@ extension GetLocation:CLLocationManagerDelegate{
             self?.locationManager.stopUpdatingLocation()
         }
     }
-    
 }
+
 
 
 
