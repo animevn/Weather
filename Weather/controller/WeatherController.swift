@@ -111,6 +111,12 @@ class WeatherController: UIViewController, UIScrollViewDelegate{
             self?.currentWeather.updateCurrentWeather(weatherCurrent: weatherCurrent)
             return
         })
+        weather.getCurrentHour(coord: coord, completion: {[weak self] weatherHour in
+            guard let weatherHour = weatherHour else {return}
+            self?.hourWeather.isUpdateLayout = true
+            self?.hourWeather.createHourlyView(weatherHour: weatherHour)
+            return
+        })
     }
     
     
