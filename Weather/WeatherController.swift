@@ -7,11 +7,9 @@ class WeatherController: UIViewController, UIScrollViewDelegate {
     private var blurrView = UIImageView()
     private var scrollView = UIScrollView()
     private var location:GetLocation?
-    
     private var currentWeather = CurrentWeather(frame: .zero)
     private var dayWeather = DayWeather(frame: .zero)
     private var hourWeather = HourWeather(frame: .zero)
-    
     
     private func setupBackground(image:String){
         background.image = UIImage(named: image)
@@ -138,7 +136,6 @@ class WeatherController: UIViewController, UIScrollViewDelegate {
         })
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         
         setLayout()
