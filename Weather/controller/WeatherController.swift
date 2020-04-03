@@ -1,10 +1,10 @@
 import UIKit
 import Cartography
 
-class WeatherController: UIViewController{
+class WeatherController: UIViewController, UIScrollViewDelegate{
     
     private var background = UIImageView()
-    private var blurrView = UIImageView()
+    private var blurView = UIImageView()
     private var scrollView = UIScrollView()
     
     private var currentWeather = CurrentWeather(frame: .zero)
@@ -23,11 +23,11 @@ class WeatherController: UIViewController{
         view.addSubview(background)
     }
     
-    private func setupBlurrView(){
-        blurrView.clipsToBounds = true
-        blurrView.frame.size = view.frame.size
-        blurrView.contentMode = .scaleAspectFill
-        view.addSubview(blurrView)
+    private func setupBlurView(){
+        blurView.clipsToBounds = true
+        blurView.frame.size = view.frame.size
+        blurView.contentMode = .scaleAspectFill
+        view.addSubview(blurView)
     }
     
     private func setupScrollView(){
@@ -71,13 +71,36 @@ class WeatherController: UIViewController{
         
     }
     
+    private func getBlurEffect()->UIVisualEffectView{
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return blurEffectView
+    }
+    
+    private func setupBlurEffectToView(image:UIImage?){
+        guard let image = image else {return}
+        background.image = image
+        blurView.image = image
+        blurView.addSubview(getBlurEffect())
+        blurView.alpha = 0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let threshold = screen().y/2
+        blurView.alpha = min(1, offset/threshold)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("WelcomeView did load")
         setupBackground(image: Constants.image)
-        setupBlurrView()
+        setupBlurView()
         setupScrollView()
         initLayouts()
+        setupBlurEffectToView(image: UIImage(named: Constants.image))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,11 +125,7 @@ class WeatherController: UIViewController{
     
 }
 
-extension WeatherController:UIScrollViewDelegate{
-    
-    
-    
-}
+
 
 
 
