@@ -44,6 +44,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		514815DB24372E4000E578BF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				F17829A12328C62300C06A55 /* AppDelegate.swift */,
+				F17829A32328C62300C06A55 /* WeatherController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		514815DC24372E4E00E578BF /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		514815DD24372E5800E578BF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F17829AA2328C62500C06A55 /* Launch.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		F17829952328C62300C06A55 = {
 			isa = PBXGroup;
 			children = (
@@ -65,10 +89,10 @@
 		F17829A02328C62300C06A55 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F17829A12328C62300C06A55 /* AppDelegate.swift */,
-				F17829A32328C62300C06A55 /* WeatherController.swift */,
+				514815DC24372E4E00E578BF /* model */,
+				514815DD24372E5800E578BF /* view */,
+				514815DB24372E4000E578BF /* controller */,
 				F17829A82328C62500C06A55 /* Assets.xcassets */,
-				F17829AA2328C62500C06A55 /* Launch.storyboard */,
 				F17829AD2328C62500C06A55 /* Info.plist */,
 			);
 			path = Weather;
