@@ -10,7 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey:Any]?)->Bool{
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        
+        let weather = WeatherController()
+        window?.rootViewController = weather
+        window?.makeKeyAndVisible()
         
         return true
     }
