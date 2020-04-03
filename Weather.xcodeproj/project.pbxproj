@@ -11,6 +11,7 @@
 		51529D082437765C008E5424 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D072437765C008E5424 /* Constants.swift */; };
 		51529D0A24377C62008E5424 /* HourWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D0924377C62008E5424 /* HourWeather.swift */; };
 		51529D0C24377C9A008E5424 /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D0B24377C9A008E5424 /* DayWeather.swift */; };
+		51529D0E2437A80E008E5424 /* HourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D0D2437A80E008E5424 /* HourCell.swift */; };
 		515F5D242437365500A7F319 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F5D232437365500A7F319 /* Repo.swift */; };
 		5160283024373E1F008659EA /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160282F24373E1F008659EA /* OpenWeather.swift */; };
 		5160283224374177008659EA /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160283124374177008659EA /* Flickr.swift */; };
@@ -28,6 +29,7 @@
 		51529D072437765C008E5424 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51529D0924377C62008E5424 /* HourWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourWeather.swift; sourceTree = "<group>"; };
 		51529D0B24377C9A008E5424 /* DayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeather.swift; sourceTree = "<group>"; };
+		51529D0D2437A80E008E5424 /* HourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCell.swift; sourceTree = "<group>"; };
 		515F5D232437365500A7F319 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		5160282F24373E1F008659EA /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		5160283124374177008659EA /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				F17829A32328C62300C06A55 /* WeatherController.swift */,
 				51529D0524377586008E5424 /* CurrentWeather.swift */,
 				51529D0924377C62008E5424 /* HourWeather.swift */,
+				51529D0D2437A80E008E5424 /* HourCell.swift */,
 				51529D0B24377C9A008E5424 /* DayWeather.swift */,
 			);
 			path = controller;
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5160283224374177008659EA /* Flickr.swift in Sources */,
+				51529D0E2437A80E008E5424 /* HourCell.swift in Sources */,
 				51529D0C24377C9A008E5424 /* DayWeather.swift in Sources */,
 				515F5D242437365500A7F319 /* Repo.swift in Sources */,
 				F17829A42328C62300C06A55 /* WeatherController.swift in Sources */,
