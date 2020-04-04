@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51359589243817620022D570 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51359588243817620022D570 /* DayCell.swift */; };
 		51529D0624377586008E5424 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D0524377586008E5424 /* CurrentWeather.swift */; };
 		51529D082437765C008E5424 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D072437765C008E5424 /* Constants.swift */; };
 		51529D0A24377C62008E5424 /* HourWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51529D0924377C62008E5424 /* HourWeather.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51359588243817620022D570 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		51529D0524377586008E5424 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		51529D072437765C008E5424 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51529D0924377C62008E5424 /* HourWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourWeather.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				51529D0924377C62008E5424 /* HourWeather.swift */,
 				51529D0D2437A80E008E5424 /* HourCell.swift */,
 				51529D0B24377C9A008E5424 /* DayWeather.swift */,
+				51359588243817620022D570 /* DayCell.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				51529D0624377586008E5424 /* CurrentWeather.swift in Sources */,
 				51529D082437765C008E5424 /* Constants.swift in Sources */,
 				F17829A22328C62300C06A55 /* AppDelegate.swift in Sources */,
+				51359589243817620022D570 /* DayCell.swift in Sources */,
 				51F1806524376F35009F84D7 /* GetFlickr.swift in Sources */,
 				51F1806324376CB7009F84D7 /* GetWeather.swift in Sources */,
 				5160283024373E1F008659EA /* OpenWeather.swift in Sources */,

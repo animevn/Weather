@@ -12,25 +12,11 @@ class GetLocation:NSObject, CLLocationManagerDelegate{
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
     }
     
     deinit {
         print("The class \(type(of: self)) was remove from memory")
-    }
-    
-    func locationManager(
-        _ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        switch status{
-        case .denied:
-            print("denied")
-        case .notDetermined:
-            print("not determined")
-        case .restricted:
-            print("restricted")
-        default:
-            locationManager.startUpdatingLocation()
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

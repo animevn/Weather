@@ -119,7 +119,6 @@ class WeatherController: UIViewController, UIScrollViewDelegate{
         })
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("WelcomeView will appear")
