@@ -99,18 +99,16 @@ struct City:Codable{
 
 func getDailyList(list:[List]) -> [List] {
     
-    var list = [List]()
+    var listDaily = [List]()
     let dict = Dictionary(grouping: list, by: {$0.dayOfMonth})
     
     for (_, value) in dict{
-        guard
-            let dtFirst = value.first?.dt,
-            let dt_txtFirst = value.first?.dt_txt,
-            let weatherFirst = value.first?.weather else {continue}
         
-        var dt = dtFirst
-        var dt_txt = dt_txtFirst
-        var weather = weatherFirst
+        guard let valueFirst = value.first else {continue}
+        
+        var dt = valueFirst.dt
+        var dt_txt = valueFirst.dt_txt
+        var weather = valueFirst.weather
         
         let listAtNineAM = value.filter{$0.dt_txt.contains("09:00:00")}
         if listAtNineAM.count == 1{
@@ -120,8 +118,8 @@ func getDailyList(list:[List]) -> [List] {
         }
         
         var total:Double = 0
-        var temp_min = value.first?.main.temp_min ?? 0
-        var temp_max = value.first?.main.temp_max ?? 0
+        var temp_min = valueFirst.main.temp_min
+        var temp_max = valueFirst.main.temp_max
         
         for tempList in value{
             total += tempList.main.temp
@@ -131,11 +129,11 @@ func getDailyList(list:[List]) -> [List] {
         
         let main = Main(temp: total/Double(value.count),
                         temp_min: temp_min, temp_max: temp_max)
-        list.append(List(dt: dt, dt_txt: dt_txt, main: main, weather: weather))
+        listDaily.append(List(dt: dt, dt_txt: dt_txt, main: main, weather: weather))
         
     }
     
-    return list.sorted{$0.dt < $1.dt}
+    return listDaily.sorted{$0.dt < $1.dt}
 }
 
 struct WeatherHour:Codable{

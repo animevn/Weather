@@ -32,6 +32,13 @@ class DayCell:UIView{
         lbMinMax.font = .systemFont(ofSize: height * 0.4)
     }
     
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        createViews()
+//        setupViews()
+//    }
+        
+    //this is used when wanna add more parameters to uiview initializer
     required init(numOfRows:CGFloat){
         self.numOfRows = numOfRows
         super.init(frame: .zero)

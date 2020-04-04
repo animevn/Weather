@@ -115,6 +115,11 @@ class WeatherController: UIViewController, UIScrollViewDelegate{
             guard let weatherHour = weatherHour else {return}
             self?.hourWeather.isUpdateLayout = true
             self?.hourWeather.createHourlyView(weatherHour: weatherHour)
+            
+            self?.dayWeather.isUpdateLayout = true
+            self?.dayWeather.numOfRows = CGFloat(weatherHour.listDaily.count)
+            print(weatherHour.listDaily.count)
+            self?.dayWeather.createWeatherDay(weatherHour: weatherHour)
             return
         })
     }
